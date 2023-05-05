@@ -27,10 +27,16 @@ function startCountdown() {
       // Display the countdown in the "countdown" div
       document.getElementById("countdown").innerHTML = "Countdown: " + days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 
+      var audio = new Audio('../res/audio/simple.wav');
+      audio.play();
+
       // If the countdown is finished, display a message
       if (distance < 0) {
         clearInterval(countdownTimer);
         document.getElementById("countdown").innerHTML = "Countdown has ended!";
+        var audio = new Audio('../res/audio/simple_complete.mp3');
+        audio.play();  
+    
       }
     }, 1000);
   }
